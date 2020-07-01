@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/e290bac30f.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Budget App</h1>
+        <div class="content">
+            <div class="left">
+                <form id="add-budget">
+                    <h2>Budget</h2>
+                    <div class="input">
+                        <input id="budget-input" type="text" required autocomplete="off">
+                        <label for="budget-input">Budget Amount</label>
+                        <span></span>
+                    </div>
+                    <div class="buttons">
+                        <button>Set Budget</button>
+                        <button>Add To Budget</button>
+                    </div>
+                </form>
+                <form id="add-expense">
+                    <h2>Expenses</h2>
+                    <div class="input">
+                        <input id="expense-title-input" type="text" required autocomplete="off">
+                        <label for="expense-title-input">Expense Title</label>
+                        <span></span>
+                    </div>
+                    <div class="input">
+                        <input id="expense-amount-input" type="text" required autocomplete="off">
+                        <label for="expense-amount-input">Expense Amount</label>
+                        <span></span>
+                    </div>
+                    <button>Add Expense</button>
+                </form>
+            </div>
+            <div class="right">
+                <div class="budget">
+                    <div class="col">
+                        <div class="col-title">
+                            <h3>Budget</h3>
+                        </div>
+                        <div class="col-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="col-value">$1000</div>
+                    </div>
+                    <div class="col">
+                        <div class="col-title">
+                            <h3>Expenses</h3>
+                        </div>
+                        <div class="col-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="col-value red">$200</div>
+                    </div>
+                    <div class="col">
+                        <div class="col-title">
+                            <h3>Balance</h3>
+                        </div>
+                        <div class="col-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                            <!-- <i class="fas fa-euro-sign"></i> -->
+                        </div>
+                        <div class="col-value">$800</div>
+                    </div>
+                </div>
+                <div class="table">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

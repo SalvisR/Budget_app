@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* background-color: #111; */
+
+    background: #111;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #111, #151515);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #111, #151515); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+h1, h2, h3 {
+    font-family: 'Raleway', sans-serif;
+    color: #999;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    padding-top: 20px;
+}
+
+h2 {
+    padding-bottom: 15px;
+}
+
+.content {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    max-width: 35rem;
+    padding: 20px;
+    font-size: 1.2rem;
+    background-color: #151515;
+}
+
+input {
+    display: block;
+    margin: 2rem 0;
+    width: 25rem;
+    height: 2rem;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.input {
+    position: relative;
+}
+
+.input label {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    pointer-events: none;
+    transition: all 0.2s ease-in;
+    color: #555;
+    font-size: 1rem;
+}
+
+input:focus ~label,
+input:valid ~label {
+    top: -1.5rem;
+    font-size: 0.85rem;
+    color: #fff;
+    background-color: #ff006a;
+    padding: 2px 6px;
+}
+
+.input span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    background-color: #555;
+    width: 100%;
+    height: 2px;
+}
+
+.input span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00b0ff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+}
+
+input:focus ~span::before,
+input:valid ~span::before {
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+form:nth-of-type(2) {
+    margin-top: 50px;
+}
+
+button {
+    background-color: #333;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    padding: 10px 25px;
+    transition: all 0.2s ease-in-out;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #00bcd4;
+}
+
+.right {
+    background-color: #111;
+    flex: 1;
+    padding: 50px;
+}
+
+.budget {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 35rem;
+    margin: 0 auto;
+}
+
+.col {
+    text-align: center;
+}
+
+.col-icon {
+    font-size: 3rem;
+    padding: 5px 0;
+    color: #00bcd4;
+}
+
+.col-value {
+    color: #555;
+    font-size: 1.5rem;
+}
+
+.red {
+    color: rgb(94, 43, 43);
+}

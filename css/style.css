@@ -39,6 +39,7 @@ h2 {
     padding: 50px 0;
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
 .left {
@@ -142,6 +143,7 @@ button:hover {
     justify-content: space-around;
     max-width: 35rem;
     margin: 0 auto;
+    padding-bottom: 40px;
 }
 
 .col {
@@ -161,4 +163,75 @@ button:hover {
 
 .red {
     color: rgb(94, 43, 43);
+}
+
+.table {
+    width: 100%;
+}
+table {
+    width: 100%;
+    max-width: 40rem;
+    background-color: #151515;
+    margin: 0 auto;
+    padding: 0 10px 10px 10px;
+    border-collapse: collapse;
+}
+
+table th {
+    text-align: left;
+}
+
+table td {
+    padding-left: 5px;
+}
+
+table td:nth-of-type(3) {
+    color: rgb(94, 43, 43);
+}
+
+table tbody tr {
+    transition: all 0.1s ease-in-out;
+}
+
+table tbody tr:hover {
+    background-color: #ff006a;
+    color: #fff;
+}
+
+table tbody tr:hover td:nth-of-type(3) {
+    color: #fff;
+}
+
+table thead {
+    color: #999;
+}
+
+table thead tr {
+    height: 40px;
+}
+
+table tbody {
+    color: #555;
+}
+
+td input {
+    width: 10px;
+    margin: 0;
+}
+
+.delete-btn {
+    position: absolute;
+    bottom: 90px;
+    right: 20px;
+    background-color: red;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    padding: 0 5px 0 5px;
+    /* display: none; */
+}
+
+.delete-btn:hover {
+    background-color: red;
+    transform: scale(1.2);
 }

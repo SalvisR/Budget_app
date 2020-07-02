@@ -50,7 +50,7 @@
                         <div class="col-icon">
                             <i class="fas fa-wallet"></i>
                         </div>
-                        <div class="col-value">$1000</div>
+                        <div class="col-value"><span>$</span>1000</div>
                     </div>
                     <div class="col">
                         <div class="col-title">
@@ -59,22 +59,23 @@
                         <div class="col-icon">
                             <i class="fas fa-credit-card"></i>
                         </div>
-                        <div class="col-value red">$200</div>
+                        <div class="col-value red"><span>$</span>200</div>
                     </div>
                     <div class="col">
                         <div class="col-title">
                             <h3>Balance</h3>
                         </div>
-                        <div class="col-icon">
+                        <div class="col-icon" id="currency">
                             <i class="fas fa-dollar-sign"></i>
-                            <!-- <i class="fas fa-euro-sign"></i> -->
                         </div>
-                        <div class="col-value">$800</div>
+                        <div class="col-value"><span>$</span>800</div>
                     </div>
                 </div>
                 <div class="table">
-                    <button class="delete-btn"><i class="fas fa-trash-alt"></i></button>
                     <table>
+                        <div class="btn-container">
+                            <button class="delete-btn"><i class="fas fa-trash-alt"></i></button>
+                        </div>
                         <thead>
                             <tr>
                                 <th>
@@ -86,7 +87,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="checkbox"></td>
+                                <td><input class="checkbox" type="checkbox"></td>
                                 <td contenteditable="true">Title</td>
                                 <td contenteditable="true">200</td>
                                 <td>
@@ -94,7 +95,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox"></td>
+                                <td><input class="checkbox" type="checkbox"></td>
                                 <td>title2</td>
                                 <td>300</td>
                                 <td>
@@ -102,7 +103,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox"></td>
+                                <td><input class="checkbox" type="checkbox"></td>
                                 <td>title2</td>
                                 <td>300</td>
                                 <td>
@@ -110,7 +111,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="checkbox"></td>
+                                <td><input class="checkbox" type="checkbox"></td>
                                 <td>title2</td>
                                 <td>300</td>
                                 <td>
@@ -123,6 +124,9 @@
             </div>
         </div>
     </div>
+
+    <script src="./js/Budget.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>

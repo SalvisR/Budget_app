@@ -1,40 +1,84 @@
 const checkboxes = document.querySelectorAll('.checkbox');
 const currency = document.getElementById('currency');
+const front = document.querySelector('.front');
+const back = document.querySelector('.back');
+const amount = document.querySelectorAll('.amount');
+const budgetAmount = document.querySelector('.budget-amount');
+const expensesAmount = document.querySelector('.expenses-amount');
+const balanceAmount = document.querySelector('.balance-amount');
+const addBudget = document.getElementById('add-budget');
+const budgetInput = document.getElementById('budget-input');
 let currencyIcon = true;
-let currencyClass = 'dollar'
 
-const changeCurrency = () => {
+const budget = new Budget(1001, 200, 800);
 
-  currency.animate([
-    { transform: 'rotateY(0deg)' },
-    { transform: 'rotateY(180deg)' }
+const setValues = () => {
+  budgetAmount.textContent = budget.getBudget();
+  expensesAmount.textContent = budget.getExpenses();
+  balanceAmount.textContent = budget.getBalance();
+};
+
+const changeCurrency = (direction, duration) => {
+  const frontDirection = [
+    'perspective(600px) rotateY(0deg)', 'perspective(600px) rotateY(180deg)'
+  ];
+  const backDirection = [
+    'perspective(600px) rotateY(180deg)', 'perspective(600px) rotateY(360deg)'
+  ];
+
+  front.animate([
+    { transform: direction ? frontDirection[1] : frontDirection[0] },
+    { transform: direction ? frontDirection[0] : frontDirection[1] }
   ], {
-    duration: 100,
+    duration,
     fill: 'forwards'
   });
+  back.animate([
+    { transform: direction ? backDirection[1] : backDirection[0] },
+    { transform: direction ? backDirection[0] : backDirection[1] }
+  ], {
+    duration,
+    fill: 'forwards'
+  });
+};
+const changeAmount = (duration = 1000) => {
+  amount.forEach(el => {
+    const size = getComputedStyle(el).fontSize;
 
-  setTimeout(() => {
-    const icon = document.querySelector('#currency .fas').remove();
-    const newIcon = document.createElement('i');
-    newIcon.classList.add('fas');
-    newIcon.classList.add(`fa-${currencyClass}-sign`);
-    currency.append(newIcon);
-
-    currency.animate([
-      { transform: 'rotateY(180deg)' },
-      { transform: 'rotateY(360deg)' }
+    el.animate([
+      { fontSize: `${size}` },
+      { fontSize: '0px' },
+      { fontSize: '0px' },
+      { fontSize: `${size}` }
     ], {
-      duration: 100,
+      duration,
       fill: 'forwards'
     });
-  }, 110);
+  });
+  setTimeout(() => {
+    setValues();
+  }, duration / 2);
 
+}
+changeAmount(100);
 
-};
 
 currency.addEventListener('click', () => {
   currencyIcon = !currencyIcon;
-  currencyClass = currencyIcon ? 'dollar' : 'euro';
-  changeCurrency();
+  budget.setCurrency(currencyIcon ? 'dollar' : 'euro');
+
+  changeCurrency(currencyIcon, 300);
+  changeAmount(500);
+});
+
+addBudget.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const val = budgetInput.value;
+  if (!isNaN(val)) {
+    budget.setBudget(val * 1);
+    changeAmount(500);
+
+    budgetInput.value = '';
+  }
 
 });

@@ -142,7 +142,10 @@ addExpense.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const title = expenseTitle.value;
-  const amount = expenseAmount.value;
+  const amount = expenseAmount.value * 1;
+  if (isNaN(amount)) {
+    return;
+  }
   const data = {
     title,
     amount

@@ -12,7 +12,6 @@ body {
     background: #111;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #111, #151515);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #111, #151515); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 h1, h2, h3 {
@@ -267,3 +266,24 @@ td input {
 .amount {
     transition: all 0.5s ease-in-out;
 }
+
+@media only screen and (max-width: 1152px) {
+    .container {
+        width: 95%;
+    }
+  }
+@media only screen and (max-width: 1024px) {
+    body {
+        background: #111;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #111, #151515);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #111, #151515); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .right {
+        min-width: 35rem;
+    }
+  }
